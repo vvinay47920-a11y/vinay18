@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+</head>
+<body>
+
+<h2>Signup</h2>
+
+<form id="signupForm">
+
+    <input type="text" id="name" placeholder="Name" required><br><br>
+
+    <input type="email" id="email" placeholder="Email" required><br><br>
+
+    <input type="password" id="password" placeholder="Password" required><br><br>
+
+    <button type="submit">Sign Up</button>
+
+</form>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    alert("Signup Successful!");
+
+    // Login page ki vellali
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>
